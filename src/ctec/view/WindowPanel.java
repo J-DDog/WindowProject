@@ -15,17 +15,17 @@ import java.awt.event.ActionEvent;
 public class WindowPanel extends JPanel
 {
 	
-	private WindowController mainController;
+	private WindowController baseController;
 	private JButton firstButton;
 	private JTextField firstTextField;
-	private SpringLayout mainLayout;
+	private SpringLayout baseLayout;
 	
 	public WindowPanel(WindowController mainController)
 	{
-		this.mainController = mainController;
+		this.baseController = mainController;
 		
 		
-		mainLayout = new SpringLayout();
+		baseLayout = new SpringLayout();
 		firstButton = new JButton("My Button");
 		firstTextField = new JTextField();
 		firstTextField.setColumns(10);
@@ -37,7 +37,7 @@ public class WindowPanel extends JPanel
 	
 	private void setupPanel()
 	{
-		this.setLayout(mainLayout);
+		this.setLayout(baseLayout);
 		this.add(firstTextField);
 		this.add(firstButton);
 		
@@ -45,10 +45,10 @@ public class WindowPanel extends JPanel
 	
 	private void setupLayout()
 	{
-		mainLayout.putConstraint(SpringLayout.WEST, firstButton, 162, SpringLayout.WEST, this);
-		mainLayout.putConstraint(SpringLayout.NORTH, firstButton, 29, SpringLayout.SOUTH, firstTextField);
-		mainLayout.putConstraint(SpringLayout.NORTH, firstTextField, 60, SpringLayout.NORTH, this);
-		mainLayout.putConstraint(SpringLayout.WEST, firstTextField, 150, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, firstButton, 162, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, firstButton, 29, SpringLayout.SOUTH, firstTextField);
+		baseLayout.putConstraint(SpringLayout.NORTH, firstTextField, 60, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, firstTextField, 150, SpringLayout.WEST, this);
 	}
 	
 	private void setupListeners()

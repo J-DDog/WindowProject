@@ -11,10 +11,10 @@ public class WindowFrame extends JFrame
 	
 	private WindowFrame(){}
 	
-	public WindowFrame(WindowController mainController)
+	public WindowFrame(WindowController baseController)
 	{
-		this.baseController = mainController;
-		basePanel = new WindowPanel(mainController);
+		this.baseController = baseController;
+		basePanel = new WindowPanel(baseController);
 		setupFrame();
 	}
 	
