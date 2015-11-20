@@ -27,7 +27,7 @@ public class WindowFrame extends JFrame
 		this.setVisible(true);
 	}
 	
-	public WindowController getMainController()
+	public WindowController getBaseController()
 	{
 		return baseController;
 	}
