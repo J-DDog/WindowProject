@@ -4,6 +4,7 @@ package ctec.view;
 import javax.swing.*;
 
 import java.awt.event.*;
+import java.awt.Color;
 
 import ctec.controller.WindowController;
 
@@ -53,6 +54,8 @@ public class WindowPanel extends JPanel
 		red = (int) (Math.random() * 256);
 		green = (int) (Math.random() * 256);
 		blue = (int) (Math.random() * 256);
+		
+		this.setBackground(new Color(red, green, blue));
 	}
 	
 	private void setupListeners()
@@ -71,8 +74,8 @@ public class WindowPanel extends JPanel
 			@Override
 			public void mouseClicked(MouseEvent clicked)
 			{
-				// When you Click the Mouse
-				
+				// When you Click the Mouse change to random color background
+//				changeRandomColor();
 			}
 
 			@Override
@@ -92,17 +95,38 @@ public class WindowPanel extends JPanel
 			@Override
 			public void mouseEntered(MouseEvent entered)
 			{
-				// TODO Auto-generated method stub
-				
+				// Randomize Background on mouse entered panel
+//				changeRandomColor();
 			}
 
 			@Override
 			public void mouseExited(MouseEvent exited)
 			{
+				// Randomize Background on mouse exited panel
+//				changeRandomColor();
+			}
+		
+		});
+		
+		this.addMouseMotionListener(new MouseMotionListener()
+		{
+
+			@Override
+			public void mouseDragged(MouseEvent dragged)
+			{
+				// TODO Auto-generated method stub
+				
+				//changeRandomColor();
+				
+			}
+
+			@Override
+			public void mouseMoved(MouseEvent moved)
+			{
 				// TODO Auto-generated method stub
 				
 			}
-		
+			
 		});
 	}
 }
