@@ -1,16 +1,13 @@
 package ctec.view;
 
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.SpringLayout;
-import javax.swing.SwingConstants;
+
+import javax.swing.*;
+
+import java.awt.event.*;
+import java.awt.Color;
 
 import ctec.controller.WindowController;
 
-import java.awt.Color;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class WindowPanel extends JPanel
 {
@@ -51,6 +48,16 @@ public class WindowPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.WEST, firstTextField, 150, SpringLayout.WEST, this);
 	}
 	
+	private void changeRandomColor()
+	{
+		int red, green, blue;
+		red = (int) (Math.random() * 256);
+		green = (int) (Math.random() * 256);
+		blue = (int) (Math.random() * 256);
+		
+		this.setBackground(new Color(red, green, blue));
+	}
+	
 	private void setupListeners()
 	{
 		firstButton.addActionListener(new ActionListener()
@@ -59,6 +66,67 @@ public class WindowPanel extends JPanel
 			{
 				firstTextField.setText("Wow, This is amazing");
 			}
+		});
+		
+		this.addMouseListener(new MouseListener()
+		{
+
+			@Override
+			public void mouseClicked(MouseEvent clicked)
+			{
+				// When you Click the Mouse change to random color background
+//				changeRandomColor();
+			}
+
+			@Override
+			public void mousePressed(MouseEvent presses)
+			{
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent released)
+			{
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent entered)
+			{
+				// Randomize Background on mouse entered panel
+//				changeRandomColor();
+			}
+
+			@Override
+			public void mouseExited(MouseEvent exited)
+			{
+				// Randomize Background on mouse exited panel
+//				changeRandomColor();
+			}
+		
+		});
+		
+		this.addMouseMotionListener(new MouseMotionListener()
+		{
+
+			@Override
+			public void mouseDragged(MouseEvent dragged)
+			{
+				// TODO Auto-generated method stub
+				
+				//changeRandomColor();
+				
+			}
+
+			@Override
+			public void mouseMoved(MouseEvent moved)
+			{
+				// TODO Auto-generated method stub
+				
+			}
+			
 		});
 	}
 }
