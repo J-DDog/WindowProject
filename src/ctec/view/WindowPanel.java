@@ -25,6 +25,7 @@ public class WindowPanel extends JPanel
 		baseLayout = new SpringLayout();
 		firstButton = new JButton("My Button");
 		firstTextField = new JTextField();
+
 		firstTextField.setColumns(10);
 		
 		setupPanel();
@@ -42,10 +43,12 @@ public class WindowPanel extends JPanel
 	
 	private void setupLayout()
 	{
-		baseLayout.putConstraint(SpringLayout.WEST, firstButton, 162, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, firstButton, 29, SpringLayout.SOUTH, firstTextField);
 		baseLayout.putConstraint(SpringLayout.NORTH, firstTextField, 60, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, firstTextField, 150, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, firstButton, 29, SpringLayout.SOUTH, firstTextField);
+		baseLayout.putConstraint(SpringLayout.WEST, firstButton, 0, SpringLayout.WEST, firstTextField);
+		baseLayout.putConstraint(SpringLayout.EAST, firstButton, 0, SpringLayout.EAST, firstTextField);
+		
 	}
 	
 	private void changeRandomColor()
